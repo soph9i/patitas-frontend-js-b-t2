@@ -30,7 +30,6 @@ async function cerrarSesion() {
     };
 
     try {
-        
         const response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -38,7 +37,6 @@ async function cerrarSesion() {
             },
             body: JSON.stringify(request)
         });
-
         // validar respuesta
         const result = await response.json();
         console.log('Respuesta del servidor: ', result);
@@ -49,11 +47,8 @@ async function cerrarSesion() {
         } else {
             console.log("Error: "+ result.mensaje);
         }
-
     } catch (error) {
-        
         console.log('Error: Ocurrió un problema al cerrar sesion', error);
-
     }
 
 }
